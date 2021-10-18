@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Switch, Route } from "react-router-dom";
+import Header from "./components/Header";
+import Homepage from "./components/Homepage";
+import ReviewsByCategory from "./components/ReviewsByCategory";
+import IndividualReview from "./components/IndividualReview";
+import IncorrectPath from "./components/IncorrectPath";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section>
+      <Header />
+      <Switch>
+        <Route exact path="/reviews">
+          <Homepage />
+        </Route>
+        <Route exact path="/reviews/:category">
+          <ReviewsByCategory />
+        </Route>
+        <Route exact path="/reviews/:category/:review_id">
+          <IndividualReview />
+        </Route>
+        <IncorrectPath />
+      </Switch>
+    </section>
   );
 }
 
