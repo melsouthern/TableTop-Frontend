@@ -1,0 +1,13 @@
+.Homepage {
+  padding: 20px;
+  border-color: black;
+  border-style: solid;
+  text-align: center;
+}
+
+.AllReviewedGames {
+  border-color: black;
+  border-style: solid;
+  text-align: left;
+  font-size: 12px;
+}
