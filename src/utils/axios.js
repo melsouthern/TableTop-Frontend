@@ -21,3 +21,13 @@ export const getReviewsByCategory = async (category, sortBy) => {
 
   return data.reviews;
 };
+
+export const getSpecificReview = async (review_id) => {
+  const { data } = await gamesApi.get(`/reviews/${review_id}`);
+  return data.review;
+};
+
+export const getReviewCreatorInfo = async (username) => {
+  const { data } = await gamesApi.get(`/users/${username}`);
+  return data.user;
+};

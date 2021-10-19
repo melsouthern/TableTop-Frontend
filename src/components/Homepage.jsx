@@ -8,7 +8,6 @@ const Homepage = () => {
   const [categories, setCategories] = useState([]);
   const [categoryToSubmit, setCategoryToSubmit] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-
   let history = useHistory();
 
   useEffect(() => {

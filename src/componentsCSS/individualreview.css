@@ -1,0 +1,43 @@
+.IndividualReview {
+  padding: 20px;
+  border-color: black;
+  border-style: solid;
+  text-align: center;
+  font-size: 12px;
+}
+
+.IndividualReviewImg {
+  max-width: 100%;
+}
+
+.ReviewCreatorImg {
+  max-width: 10%;
+  border-radius: 50%;
+}
+
+.ReviewAddedInfo {
+  background-color: lightgrey;
+  padding: 20px;
+}
+
+.GameInfo {
+  background-color: lightgrey;
+  padding: 20px;
+}
+
+.LikeButton {
+  padding: 20px;
+  background-color: #ee5162;
+  border: none;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  font-size: 27px;
+  color: white;
+}
+
+.LikeImg {
+  max-width: 9%;
+  padding-right: 10px;
+}
