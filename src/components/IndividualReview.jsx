@@ -1,32 +1,38 @@
 import "../componentsCSS/individualreview.css";
 import { useEffect, useState } from "react";
-import { getSpecificReview, getReviewCreatorInfo } from "../utils/axios";
+import { getSpecificReview, patchSpecificReviewVotes } from "../utils/axios";
 import { useParams, useHistory } from "react-router";
 import likeButton from "../like.png";
 
 const IndividualReview = () => {
   const [specificReview, setSpecificReview] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-  const [reviewCreatorInfo, setReviewCreatorInfo] = useState({});
-  const { review_id } = useParams();
+  const { review_id, category } = useParams();
+  const [votes, setVotes] = useState(null);
+  const [error, setError] = useState(null);
 
   let history = useHistory();
 
   useEffect(() => {
-    getSpecificReview(review_id).then((specificReviewFromApi) => {
-      setSpecificReview(specificReviewFromApi);
-      setIsLoading(false);
-    });
-  }, [setSpecificReview, review_id]);
+    getSpecificReview(review_id)
+      .then((specificReviewFromApi) => {
+        setSpecificReview(specificReviewFromApi);
+        setIsLoading(false);
+        setVotes(specificReview.votes);
+      })
+      .catch((err) => {
+        if (err) {
+          setError(err.message);
+        }
+      });
+  }, [setSpecificReview, review_id, specificReview.votes]);
 
-  useEffect(() => {
-    getReviewCreatorInfo(specificReview.owner).then((userInfoFromApi) => {
-      setReviewCreatorInfo(userInfoFromApi);
-      setIsLoading(false);
-    });
-  }, [specificReview]);
-
+  if (error) return <p>{error}</p>;
   if (isLoading) return <p>Loading...</p>;
+  if (category !== specificReview.category) {
+    setError("Request failed with status code 400");
+    return <p>{error}</p>;
+  }
 
   return (
     <section className="IndividualReview">
@@ -55,20 +61,32 @@ const IndividualReview = () => {
           This review was uploaded by {specificReview.owner} on{" "}
           {specificReview.created_at.substring(0, 10)}
         </p>
-        {/* <img
-          className="ReviewCreatorImg"
-          src={reviewCreatorInfo.avatar_url}
-          alt={reviewCreatorInfo.avatar_url}
-        ></img> */}
       </div>
       <div className="GameInfo">
         <p>Game Designer: {specificReview.designer} </p>
         <p>Category: {specificReview.category}</p>
         <p>Review: {specificReview.review_body}</p>
       </div>
-      <button className="LikeButton">
-        <img className="LikeImg" src={likeButton} alt="like button"></img>1
+      <button
+        className="LikeButton"
+        onClick={(e) => {
+          setVotes((currVotes) => {
+            return (currVotes += 1);
+          });
+          patchSpecificReviewVotes(specificReview.review_id).catch((err) => {
+            if (err) {
+              setVotes((currVotes) => {
+                return (currVotes -= 1);
+              });
+              setError("Something went wrong, please try again");
+            }
+          });
+        }}
+      >
+        <img className="LikeImg" src={likeButton} alt="like button"></img>
+        {votes}
       </button>
+      <p className="VoteError">{error}</p>
     </section>
   );
 };

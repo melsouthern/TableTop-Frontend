@@ -18,7 +18,6 @@ export const getReviewsByCategory = async (category, sortBy) => {
   const { data } = await gamesApi.get("/reviews", {
     params: { category: category, sort_by: sortBy },
   });
-
   return data.reviews;
 };
 
@@ -27,7 +26,9 @@ export const getSpecificReview = async (review_id) => {
   return data.review;
 };
 
-export const getReviewCreatorInfo = async (username) => {
-  const { data } = await gamesApi.get(`/users/${username}`);
-  return data.user;
+export const patchSpecificReviewVotes = async (review_id) => {
+  const { data } = await gamesApi.patch(`/reviews/${review_id}`, {
+    inc_votes: 1,
+  });
+  return data;
 };

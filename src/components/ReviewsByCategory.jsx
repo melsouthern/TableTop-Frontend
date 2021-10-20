@@ -10,14 +10,22 @@ const ReviewsByCategory = () => {
   const [isLoading, setIsLoading] = useState(true);
   const { category } = useParams();
   const [sortBy, setSortBy] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    getReviewsByCategory(category, sortBy).then((reviewsFromApi) => {
-      setReviews(reviewsFromApi);
-      setIsLoading(false);
-    });
+    getReviewsByCategory(category, sortBy)
+      .then((reviewsFromApi) => {
+        setReviews(reviewsFromApi);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        if (err) {
+          setError(err.message);
+        }
+      });
   }, [sortBy, category]);
 
+  if (error) return <p>{error}</p>;
   if (isLoading) return <p>Loading...</p>;
 
   return (

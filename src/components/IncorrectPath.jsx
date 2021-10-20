@@ -1,5 +1,5 @@
 const IncorrectPath = () => {
-  return <p>IncorrectPath</p>;
+  return <p>Incorrect Path</p>;
 };
 
 export default IncorrectPath;

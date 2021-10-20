@@ -41,3 +41,7 @@
   max-width: 9%;
   padding-right: 10px;
 }
+
+.VoteError {
+  padding: 10px;
+}
