@@ -45,3 +45,22 @@
 .VoteError {
   padding: 10px;
 }
+
+.CommentsSection {
+  border-color: black;
+  border-style: solid;
+}
+
+.CommentsButton {
+  all: unset;
+  font-size: 16px;
+}
+
+.IndividualComments {
+  border-color: black;
+  border-style: solid;
+}
+
+.PostComment {
+  display: inline-block;
+}

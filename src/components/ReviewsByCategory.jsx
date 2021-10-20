@@ -1,5 +1,4 @@
-import { useHistory, useParams } from "react-router";
-import { Link } from "react-router-dom";
+import { useHistory, useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "../componentsCSS/reviewsbycategory.css";
 import { getReviewsByCategory } from "../utils/axios";

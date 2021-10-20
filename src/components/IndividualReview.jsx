@@ -1,7 +1,8 @@
 import "../componentsCSS/individualreview.css";
 import { useEffect, useState } from "react";
 import { getSpecificReview, patchSpecificReviewVotes } from "../utils/axios";
-import { useParams, useHistory } from "react-router";
+import { useParams, useHistory } from "react-router-dom";
+import Comments from "./Comments";
 import likeButton from "../like.png";
 
 const IndividualReview = () => {
@@ -87,6 +88,7 @@ const IndividualReview = () => {
         {votes}
       </button>
       <p className="VoteError">{error}</p>
+      <Comments />
     </section>
   );
 };

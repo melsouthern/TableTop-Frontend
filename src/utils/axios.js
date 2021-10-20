@@ -32,3 +32,21 @@ export const patchSpecificReviewVotes = async (review_id) => {
   });
   return data;
 };
+
+export const getSpecificReviewComments = async (review_id) => {
+  const { data } = await gamesApi.get(`/reviews/${review_id}/comments`);
+  return data.comments;
+};
+
+export const getUsers = async (username) => {
+  const { data } = await gamesApi.get(`/users/${username}`);
+  return data.user;
+};
+
+export const postComment = async (review_id, username, comment) => {
+  const { data } = await gamesApi.post(`/reviews/${review_id}/comments`, {
+    username: username,
+    body: comment,
+  });
+  return data;
+};
