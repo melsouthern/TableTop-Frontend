@@ -2,6 +2,7 @@ import { useHistory, useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "../componentsCSS/reviewsbycategory.css";
 import { getReviewsByCategory } from "../utils/axios";
+import loading from "../loading.gif";
 
 const ReviewsByCategory = () => {
   const history = useHistory();
@@ -25,46 +26,76 @@ const ReviewsByCategory = () => {
   }, [sortBy, category]);
 
   if (error) return <p>{error}</p>;
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading)
+    return (
+      <section>
+        <div className="LoadingSection">
+          <img className="LoadingImg" src={loading} alt="loading"></img>;
+        </div>
+      </section>
+    );
 
   return (
     <section className="ReviewsByCategory">
       <form
-        className="BackButton"
         onSubmit={(e) => {
           e.preventDefault();
           history.push("/reviews");
         }}
       >
-        <button type="submit">Back</button>
+        <div className="BackButtonContainer">
+          {" "}
+          <button className="BackButton" type="submit">
+            Back
+          </button>
+        </div>
       </form>
-      <p>Game reviews under</p>
-      <p>{category}</p>
-      <div className="SortBy">sort by</div>
+      <p className="GameReviewsUnder">Game reviews under</p>
+      <p className="Category">{category}</p>
+      <div className="SortByDivider">
+        <div className="SortBy">sort by</div>
+      </div>
       <div className="SortByButtons">
-        <button onClick={() => setSortBy("created_at")}>date created</button>
-        <button onClick={() => setSortBy("comment_count")}>
+        <button className="CreatedAt" onClick={() => setSortBy("created_at")}>
+          date created
+        </button>
+        <button
+          className="CommentCount"
+          onClick={() => setSortBy("comment_count")}
+        >
           comment count
         </button>
-        <button onClick={() => setSortBy("votes")}>like count</button>
+        <button className="LikeCount" onClick={() => setSortBy("votes")}>
+          like count
+        </button>
       </div>
-      {reviews.map((review) => {
-        const dateOnly = review.created_at.substring(0, 10);
-        return (
-          <Link
-            to={`/reviews/${review.category}/${review.review_id}`}
-            key={review.review_id}
-          >
-            <div key={review.review_id} className="AllReviewedGames">
-              <p>Game Title: {review.title}</p>
-              <p>Category: {review.category}</p>
-              <p>Review Date: {dateOnly}</p>
-              <p>Comments: {review.comment_count}</p>
-              <p>Likes: {review.votes}</p>
-            </div>
-          </Link>
-        );
-      })}
+      <div className="AllReviewedGamesByCategory">
+        {reviews.map((review) => {
+          const dateOnly = review.created_at.substring(0, 10);
+          return (
+            <Link
+              to={`/reviews/${review.category}/${review.review_id}`}
+              key={review.review_id}
+            >
+              <div
+                key={review.review_id}
+                className="AllIndividualReviewedGamesByCategory"
+              >
+                <p className="IndividualReviewTitle">
+                  Game Title: {review.title}
+                </p>
+                <p className="IndividualReviewInfo">
+                  Category: {review.category}
+                  <br></br>
+                  Review Date: {dateOnly} <br></br>
+                  Comments: {review.comment_count}
+                </p>
+                <p>Likes: {review.votes}</p>
+              </div>
+            </Link>
+          );
+        })}
+      </div>
     </section>
   );
 };

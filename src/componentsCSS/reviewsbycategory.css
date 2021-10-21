@@ -1,20 +1,210 @@
 .ReviewsByCategory {
-  padding: 20px;
-  border-color: black;
-  border-style: solid;
+  padding: 0px;
   text-align: center;
+  height: 100vh;
+  background-color: #ecf1fd;
+}
+
+.BackButtonContainer {
+  padding: 20px;
+  text-align: left;
+}
+
+.AllReviewedGamesByCategory {
+  background-color: #ecf1fd;
 }
 
 .BackButton {
-  text-align: left;
+  all: unset;
+  padding: 20px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border: solid;
+  border-color: rgb(202, 202, 202);
+  border-width: 2px;
+  padding: 0.1px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: rgb(168, 168, 168);
+  font-size: 16px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .SortBy {
   text-align: left;
   border-bottom: solid;
+  border-bottom-width: 0.5px;
+  border-color: rgb(202, 202, 202);
+  color: rgb(168, 168, 168);
+  font-size: 16px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.SortByDivider {
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .SortByButtons {
+  padding-left: 20px;
+  padding-right: 20px;
   text-align: left;
   padding-bottom: 20px;
+  padding-top: 12px;
+}
+
+.CreatedAt {
+  all: unset;
+  background-color: #190b3d;
+  padding: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  font-size: 13px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+.CreatedAt:hover {
+  background-color: #ee5162;
+}
+
+.CreatedAt:active {
+  background-color: #ee5162;
+}
+
+.CommentCount {
+  all: unset;
+  background-color: #190b3d;
+  padding: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  font-size: 13px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+.CommentCount:hover {
+  background-color: #ee5162;
+}
+
+.CommentCount:active {
+  background-color: #ee5162;
+}
+
+.LikeCount {
+  all: unset;
+  background-color: #190b3d;
+  padding: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  font-size: 13px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.LikeCount:hover {
+  background-color: #ee5162;
+}
+
+.LikeCount:active {
+  background-color: #ee5162;
+}
+
+.AllIndividualReviewedGamesByCategory {
+  text-align: left;
+  font-size: 12px;
+  margin: 10px;
+  background-color: white;
+  min-height: 120px;
+  padding: 10px;
+  padding-bottom: 40px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  box-shadow: -1px 16px 27px -4px rgba(167, 175, 245, 0.77);
+  position: relative;
+}
+
+@media only screen and (min-width: 600px) {
+  .AllReviewedGamesByCategory {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .AllIndividualReviewedGamesByCategory {
+    text-align: left;
+    font-size: 12px;
+    width: 200px;
+    height: 200px;
+    flex-grow: 5;
+  }
+
+  .SortByButtons {
+    text-align: left;
+    padding-bottom: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  .SortBy {
+    text-align: left;
+    border-bottom: solid;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-bottom-width: 0.5px;
+    border-color: rgb(202, 202, 202);
+  }
+}
+
+.GameReviewsUnder {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #190b3d;
+}
+
+.Category {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+  color: #ee5162;
+  margin-bottom: 20px;
+  margin-top: 0px;
+  line-height: 31px;
+}
+
+.IndividualReviewTitle {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 16px;
+  margin-bottom: 0px;
+  color: #190b3d;
+}
+
+.IndividualReviewInfo {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: grey;
+  font-style: italic;
+  margin-bottom: 5px;
 }

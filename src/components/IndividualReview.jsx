@@ -51,11 +51,13 @@ const IndividualReview = () => {
       <div>
         {" "}
         <p>Game Title: {specificReview.title}</p>
-        <img
-          className="IndividualReviewImg"
-          src={specificReview.review_img_url}
-          alt={specificReview.title}
-        ></img>
+        <div className="IndividualReviewImgContainer">
+          <img
+            className="IndividualReviewImg"
+            src={specificReview.review_img_url}
+            alt={specificReview.title}
+          ></img>
+        </div>
       </div>
       <div>
         <p className="ReviewAddedInfo">

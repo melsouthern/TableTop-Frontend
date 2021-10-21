@@ -1,6 +1,30 @@
 .Header {
-  padding: 20px;
+  padding-top: 5px;
+  padding-left: 8px;
   margin: 0px;
-  border-color: black;
-  border-style: solid;
+  background-color: #190b3d;
+  height: 37px;
+}
+
+.DiceImg {
+  height: 25px;
+  float: left;
+  margin: 2px;
+}
+
+.LogoText {
+  color: white;
+  float: left;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  letter-spacing: 1px;
+  font-size: 19px;
+  margin-top: 0.5px;
+  margin-left: 2px;
+}
+
+.HomeImg {
+  height: 15px;
+  float: right;
+  margin-right: 15px;
+  margin-top: 6px;
 }
