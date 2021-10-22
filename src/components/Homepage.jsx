@@ -2,6 +2,7 @@ import "../componentsCSS/homepage.css";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { getCategories } from "../utils/axios";
+import LoggedIn from "./LoggedIn";
 import AllReviewedGames from "./AllReviewedGames";
 import loading from "../loading.gif";
 import boardGameIllustration from "../boardgame.jpg";
@@ -31,6 +32,7 @@ const Homepage = () => {
 
   return (
     <section>
+      <LoggedIn />
       <div className="Homepage">
         <p className="HomepageOpeningMainHeader">
           Hey there, <br></br> welcome to TableTop.
@@ -48,7 +50,7 @@ const Homepage = () => {
             e.preventDefault();
             !categoryToSubmit
               ? setError("...Oops, you didn't submit a category!")
-              : history.push(`/reviews/${categoryToSubmit}`);
+              : history.push(`reviews/${categoryToSubmit}`);
           }}
         >
           <div className="ReviewsByCategoryText">

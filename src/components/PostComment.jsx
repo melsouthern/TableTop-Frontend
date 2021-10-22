@@ -1,13 +1,25 @@
 import { useState } from "react";
 import { getUsers } from "../utils/axios";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { postComment } from "../utils/axios";
+import { UserContext } from "../contexts/User";
+import { useContext } from "react";
 
 const PostComment = ({ setComments }) => {
   const [username, setUsername] = useState(null);
   const [comment, setComment] = useState(null);
   const [error, setError] = useState(null);
   const { review_id } = useParams();
+  const { user, setUser } = useContext(UserContext);
+  const history = useHistory();
+
+  if (!user) {
+    return (
+      <button onClick={() => history.push("/login")}>
+        Log in to post a comment
+      </button>
+    );
+  }
 
   return (
     <div>

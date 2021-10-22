@@ -46,9 +46,8 @@ const Comments = () => {
         {comments.map((comment) => {
           return (
             <div key={comment.comment_id} className="IndividualComments">
-              <p>
-                posted by {comment.author} on{" "}
-                {comment.created_at?.substring(0, 10)}
+              <p className="CommentInfo">
+                {comment.author}· {comment.created_at?.substring(0, 10)}
               </p>
               <p>{comment.body}</p>
             </div>

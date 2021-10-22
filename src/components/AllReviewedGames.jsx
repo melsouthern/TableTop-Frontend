@@ -28,7 +28,6 @@ const AllReviewedGames = () => {
   return (
     <section>
       <div className="AllReviewedGames">
-        {/* <p className="AllGameReviewsText">All game reviews</p> */}
         {reviews.map((review) => {
           const dateOnly = review.created_at.substring(0, 10);
           return (

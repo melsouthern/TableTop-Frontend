@@ -1,5 +1,7 @@
 .BoardGameIllustration {
-  height: 220px;
+  height: 200px;
+  text-align: center;
+  margin-right: 15px;
 }
 
 .Homepage {
@@ -10,9 +12,24 @@
   padding-bottom: 0px;
 }
 
+.LoggedIn {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #ee5162;
+  font-size: 14px;
+  color: #190b3d;
+  text-align: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.LoggedInText {
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
 .AllIndividualReviewedGames {
   text-align: left;
-  font-size: 12px;
+  font-size: 14px;
   margin: 10px;
   background-color: white;
   min-height: 120px;
@@ -77,6 +94,10 @@
 
   .BoardGameIllustration {
     height: 300px;
+  }
+
+  .LoggedIn {
+    font-size: 16px;
   }
 }
 

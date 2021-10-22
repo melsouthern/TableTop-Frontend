@@ -11,6 +11,7 @@ const IndividualReview = () => {
   const [specificReview, setSpecificReview] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const { review_id, category } = useParams();
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
   const [votes, setVotes] = useState(null);
   const [error, setError] = useState(null);
 
@@ -30,6 +31,7 @@ const IndividualReview = () => {
       });
   }, [setSpecificReview, review_id, specificReview.votes]);
 
+  if (error) return <p>{error}</p>;
   if (isLoading)
     return (
       <section>
@@ -81,11 +83,13 @@ const IndividualReview = () => {
       </div>
       <div className="LikeButtonContainer">
         <button
+          disabled={isButtonDisabled}
           className="LikeButton"
           onClick={(e) => {
             setVotes((currVotes) => {
               return (currVotes += 1);
             });
+            setIsButtonDisabled(true);
             patchSpecificReviewVotes(specificReview.review_id).catch((err) => {
               if (err) {
                 setVotes((currVotes) => {
