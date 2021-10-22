@@ -208,3 +208,38 @@
   font-style: italic;
   margin-bottom: 5px;
 }
+
+.DiceImgIndividualReviews {
+  height: 25px;
+  margin: 2px;
+  margin-top: 0px;
+  margin-right: 0px;
+  float: left;
+}
+
+.UpvoteImgIndividualReviews {
+  height: 13px;
+  margin: 0px;
+  margin-top: 5px;
+  float: left;
+}
+
+.Divider {
+  margin: 4px;
+}
+
+.DiceContainer {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 5px;
+}
+
+.UpvoteCount {
+  float: left;
+  margin-left: 5px;
+  margin-top: 3px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 14px;
+  font-weight: 700px;
+  color: #ee5162;
+}

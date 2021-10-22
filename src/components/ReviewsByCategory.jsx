@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import "../componentsCSS/reviewsbycategory.css";
 import { getReviewsByCategory } from "../utils/axios";
 import loading from "../loading.gif";
+import dice from "../dice.png";
+import upvote from "../up-arrow.png";
 
 const ReviewsByCategory = () => {
   const history = useHistory();
@@ -66,7 +68,7 @@ const ReviewsByCategory = () => {
           comment count
         </button>
         <button className="LikeCount" onClick={() => setSortBy("votes")}>
-          like count
+          dice votes
         </button>
       </div>
       <div className="AllReviewedGamesByCategory">
@@ -81,16 +83,28 @@ const ReviewsByCategory = () => {
                 key={review.review_id}
                 className="AllIndividualReviewedGamesByCategory"
               >
-                <p className="IndividualReviewTitle">
-                  Game Title: {review.title}
-                </p>
+                <p className="IndividualReviewTitle">{review.title}</p>
                 <p className="IndividualReviewInfo">
                   Category: {review.category}
                   <br></br>
                   Review Date: {dateOnly} <br></br>
+                  Uploaded By: {review.owner} <br></br>
                   Comments: {review.comment_count}
                 </p>
-                <p>Likes: {review.votes}</p>
+                <hr className="Divider"></hr>
+                <div className="DiceContainer">
+                  <img
+                    className="DiceImgIndividualReviews"
+                    src={dice}
+                    alt="dice"
+                  ></img>
+                  <img
+                    className="UpvoteImgIndividualReviews"
+                    src={upvote}
+                    alt="upvote"
+                  ></img>
+                  <div className="UpvoteCount">{review.votes} Dice Votes</div>
+                </div>
               </div>
             </Link>
           );
