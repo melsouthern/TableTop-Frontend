@@ -1,6 +1,4 @@
 .IndividualReview {
-  border-color: black;
-  border-style: solid;
   text-align: center;
   font-size: 12px;
 }
@@ -62,6 +60,38 @@
 
 .PostComment {
   display: inline-block;
+}
+
+.BackButton {
+  all: unset;
+  padding: 20px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border: solid;
+  border-color: rgb(202, 202, 202);
+  border-width: 2px;
+  padding: 0.1px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: rgb(168, 168, 168);
+  font-size: 16px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.BackButtonContainer {
+  padding: 20px;
+  text-align: left;
+}
+
+.ReviewTitle {
+  margin-top: 0px;
+  margin-bottom: 10px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #190b3d;
 }
 
 @media only screen and (min-width: 600px) {

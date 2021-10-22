@@ -39,18 +39,21 @@ const IndividualReview = () => {
     <section className="IndividualReview">
       <div>
         <form
-          className="BackButton"
           onSubmit={(e) => {
             e.preventDefault();
             history.goBack();
           }}
         >
-          <button type="submit">Back</button>
+          <div className="BackButtonContainer">
+            <button type="submit" className="BackButton">
+              Back
+            </button>
+          </div>
         </form>
       </div>
       <div>
         {" "}
-        <p>Game Title: {specificReview.title}</p>
+        <p className="ReviewTitle">{specificReview.title}</p>
         <div className="IndividualReviewImgContainer">
           <img
             className="IndividualReviewImg"
