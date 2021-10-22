@@ -25,25 +25,44 @@
 }
 
 .GameInfo {
-  background-color: lightgrey;
+  background-color: #ecf1fd;
+  color: #190b3d;
   padding: 20px;
+  text-align: left;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .LikeButton {
-  padding: 20px;
-  background-color: #ee5162;
+  background-color: #190b3d;
   border: none;
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
-  border-bottom-right-radius: 25px;
-  border-bottom-left-radius: 25px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
   font-size: 27px;
   color: white;
+  flex-grow: 2;
+  justify-content: center;
+  text-align: center;
+  padding-top: 2.5px;
+  padding-bottom: 2.5px;
 }
 
-.LikeImg {
-  max-width: 9%;
-  padding-right: 10px;
+.LikeButtonContainer {
+  margin: 20px;
+  display: flex;
+}
+
+.DiceImg2 {
+  height: 30px;
+  margin-bottom: 2px;
+}
+
+.Upvote2 {
+  height: 15px;
+  padding-bottom: 1px;
+  margin-bottom: 3px;
+  margin-right: 20px;
 }
 
 .VoteError {
@@ -98,9 +117,11 @@
   margin-left: 10px;
   margin-right: 10px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 22px;
   color: #190b3d;
+  text-decoration: underline;
+  text-decoration-color: #ee5162;
 }
 
 @media only screen and (min-width: 600px) {

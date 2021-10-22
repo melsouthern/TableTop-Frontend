@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 import { getSpecificReview, patchSpecificReviewVotes } from "../utils/axios";
 import { useParams, useHistory } from "react-router-dom";
 import Comments from "./Comments";
-import likeButton from "../like.png";
+import dice from "../dice.png";
+import upvote from "../up-arrow (2).png";
 
 const IndividualReview = () => {
   const [specificReview, setSpecificReview] = useState({});
@@ -71,25 +72,28 @@ const IndividualReview = () => {
         <p>Category: {specificReview.category}</p>
         <p>Review: {specificReview.review_body}</p>
       </div>
-      <button
-        className="LikeButton"
-        onClick={(e) => {
-          setVotes((currVotes) => {
-            return (currVotes += 1);
-          });
-          patchSpecificReviewVotes(specificReview.review_id).catch((err) => {
-            if (err) {
-              setVotes((currVotes) => {
-                return (currVotes -= 1);
-              });
-              setError("Something went wrong, please try again");
-            }
-          });
-        }}
-      >
-        <img className="LikeImg" src={likeButton} alt="like button"></img>
-        {votes}
-      </button>
+      <div className="LikeButtonContainer">
+        <button
+          className="LikeButton"
+          onClick={(e) => {
+            setVotes((currVotes) => {
+              return (currVotes += 1);
+            });
+            patchSpecificReviewVotes(specificReview.review_id).catch((err) => {
+              if (err) {
+                setVotes((currVotes) => {
+                  return (currVotes -= 1);
+                });
+                setError("Something went wrong, please try again");
+              }
+            });
+          }}
+        >
+          <img className="DiceImg2" src={dice} alt="like button"></img>
+          <img className="Upvote2" src={upvote} alt="like button"></img>
+          {votes}
+        </button>
+      </div>
       <p className="VoteError">{error}</p>
       <Comments />
     </section>
