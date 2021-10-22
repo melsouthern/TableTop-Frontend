@@ -5,6 +5,7 @@ import { useParams, useHistory } from "react-router-dom";
 import Comments from "./Comments";
 import dice from "../dice.png";
 import upvote from "../up-arrow (2).png";
+import loading from "../loading.gif";
 
 const IndividualReview = () => {
   const [specificReview, setSpecificReview] = useState({});
@@ -29,8 +30,14 @@ const IndividualReview = () => {
       });
   }, [setSpecificReview, review_id, specificReview.votes]);
 
-  if (error) return <p>{error}</p>;
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading)
+    return (
+      <section>
+        <div className="LoadingSection">
+          <img className="LoadingImg" src={loading} alt="loading"></img>
+        </div>
+      </section>
+    );
   if (category !== specificReview.category) {
     setError("Request failed with status code 400");
     return <p>{error}</p>;

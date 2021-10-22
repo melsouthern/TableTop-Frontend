@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getSpecificReviewComments } from "../utils/axios";
 import PostComment from "./PostComment";
+import loading from "../loading.gif";
 
 const Comments = () => {
   const { review_id } = useParams();
@@ -25,7 +26,14 @@ const Comments = () => {
   }, [review_id]);
 
   if (error) return <p>{error}</p>;
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading)
+    return (
+      <section>
+        <div className="LoadingSection">
+          <img className="LoadingImg" src={loading} alt="loading"></img>
+        </div>
+      </section>
+    );
   if (commentsVisible)
     return (
       <section className="CommentsSection">

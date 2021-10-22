@@ -66,22 +66,36 @@
 }
 
 .VoteError {
-  padding: 10px;
+  padding: 0px;
+  font-style: italic;
+  color: grey;
 }
 
 .CommentsSection {
-  border-color: black;
-  border-style: solid;
+  margin-bottom: 40px;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-top: 20px;
 }
 
 .CommentsButton {
   all: unset;
   font-size: 16px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-decoration: underline;
+  text-decoration-color: #ee5162;
+  text-decoration-thickness: 2px;
+  margin-bottom: 10px;
 }
 
 .IndividualComments {
-  border-color: black;
-  border-style: solid;
+  background-color: #ecf1fd;
+  padding: 10px;
+  margin: 10px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
 }
 
 .PostComment {
@@ -122,6 +136,16 @@
   color: #190b3d;
   text-decoration: underline;
   text-decoration-color: #ee5162;
+}
+
+.LoadingImg {
+  height: 80px;
+}
+
+.LoadingSection {
+  margin-top: 200px;
+  display: flex;
+  justify-content: center;
 }
 
 @media only screen and (min-width: 600px) {
