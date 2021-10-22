@@ -54,6 +54,10 @@ const IndividualReview = () => {
       <div>
         {" "}
         <p className="ReviewTitle">{specificReview.title}</p>
+        <p className="ReviewAddedInfo">
+          This review was uploaded by {specificReview.owner} on{" "}
+          {specificReview.created_at.substring(0, 10)}
+        </p>
         <div className="IndividualReviewImgContainer">
           <img
             className="IndividualReviewImg"
@@ -61,12 +65,6 @@ const IndividualReview = () => {
             alt={specificReview.title}
           ></img>
         </div>
-      </div>
-      <div>
-        <p className="ReviewAddedInfo">
-          This review was uploaded by {specificReview.owner} on{" "}
-          {specificReview.created_at.substring(0, 10)}
-        </p>
       </div>
       <div className="GameInfo">
         <p>Game Designer: {specificReview.designer} </p>

@@ -8,15 +8,32 @@ const Header = () => {
   return (
     <section className="Header">
       <span>
-        <img className="DiceImg" src={dice} alt="dice"></img>
-        <p className="LogoText">TableTop</p>;
+        <img
+          className="DiceImg"
+          src={dice}
+          alt="dice"
+          onClick={(e) => {
+            e.preventDefault();
+            history.push(`/`);
+          }}
+        ></img>
+        <p
+          className="LogoText"
+          onClick={(e) => {
+            e.preventDefault();
+            history.push(`/`);
+          }}
+        >
+          TableTop{" "}
+        </p>
+        ;
         <img
           className="HomeImg"
           src={home}
           alt="home"
           onClick={(e) => {
             e.preventDefault();
-            history.push(`/reviews`);
+            history.push(`/`);
           }}
         ></img>
       </span>

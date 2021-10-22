@@ -42,7 +42,7 @@ const ReviewsByCategory = () => {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          history.push("/reviews");
+          history.push("/");
         }}
       >
         <div className="BackButtonContainer">

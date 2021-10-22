@@ -11,7 +11,7 @@ function App() {
     <section>
       <Header />
       <Switch>
-        <Route exact path="/reviews">
+        <Route exact path="/">
           <Homepage />
         </Route>
         <Route exact path="/reviews/:category">
