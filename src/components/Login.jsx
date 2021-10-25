@@ -3,7 +3,6 @@ import peopleAccounts from "../signin.jpg";
 import { useContext, useState } from "react";
 import { getUsers } from "../utils/axios";
 import { UserContext } from "../contexts/User";
-import { useHistory } from "react-router-dom";
 import ProfilePage from "./ProfilePage";
 
 const Login = () => {
@@ -11,7 +10,6 @@ const Login = () => {
   const [password, setPassword] = useState(null);
   const [error, setError] = useState(null);
   const { user, setUser } = useContext(UserContext);
-  const history = useHistory();
 
   if (user) return <ProfilePage />;
 
