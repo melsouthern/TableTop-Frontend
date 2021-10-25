@@ -45,7 +45,6 @@ const Login = () => {
                   userData.username,
                   userData.avatar_url,
                 ]);
-                history.push("/");
               } catch (err) {
                 setError("Username provided does not exist");
                 return;

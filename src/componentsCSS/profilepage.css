@@ -2,7 +2,6 @@
   border-radius: 50%;
   width: 140px;
   height: 140px;
-  /* display: inline-block; */
   box-shadow: 1px 7px 15px 5px rgba(66, 39, 136, 0.19);
   margin: auto;
 }
@@ -16,7 +15,6 @@
   margin-bottom: 2px;
   margin-top: 6px;
   line-height: 31px;
-  /* display: inline-block; */
 }
 
 .UsernameStyling {
