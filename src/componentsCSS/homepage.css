@@ -63,54 +63,6 @@
   font-style: italic;
 }
 
-@media only screen and (min-width: 600px) {
-  .AllReviewedGames {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .AllIndividualReviewedGames {
-    text-align: left;
-    font-size: 12px;
-    width: 200px;
-    height: 200px;
-    flex-grow: 5;
-  }
-
-  .HomepageOpeningMainHeader {
-    font-size: 50px;
-    line-height: 50px;
-  }
-
-  .HomepageOpeningText {
-    font-size: 20px;
-  }
-
-  .CategorySelectContainer {
-    margin-left: 25%;
-    margin-right: 25%;
-  }
-
-  .BoardGameIllustration {
-    height: 300px;
-  }
-
-  .LoggedIn {
-    font-size: 16px;
-  }
-}
-
-@media only screen and (min-width: 1200px) {
-  .AllIndividualReviewedGames {
-    text-align: left;
-    font-size: 12px;
-    width: 300px;
-    height: 300px;
-    flex-grow: 5;
-  }
-}
-
 .ReviewsByCategoryText {
   margin-top: 35px;
   color: #190b3d;
@@ -214,4 +166,52 @@
   margin-top: 200px;
   display: flex;
   justify-content: center;
+}
+
+@media only screen and (min-width: 600px) {
+  .AllReviewedGames {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .AllIndividualReviewedGames {
+    text-align: left;
+    font-size: 12px;
+    width: 200px;
+    height: 200px;
+    flex-grow: 5;
+  }
+
+  .HomepageOpeningMainHeader {
+    font-size: 50px;
+    line-height: 50px;
+  }
+
+  .HomepageOpeningText {
+    font-size: 20px;
+  }
+
+  .CategorySelectContainer {
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+
+  .BoardGameIllustration {
+    height: 300px;
+  }
+
+  .LoggedIn {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .AllIndividualReviewedGames {
+    text-align: left;
+    font-size: 12px;
+    width: 300px;
+    height: 300px;
+    flex-grow: 5;
+  }
 }

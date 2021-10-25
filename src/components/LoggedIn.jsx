@@ -1,11 +1,11 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { UserContext } from "../contexts/User";
 
 const LoggedIn = () => {
   const { user } = useContext(UserContext);
 
   if (user) {
-    var userNameSplit = user[0].split(" ");
+    const userNameSplit = user[0].split(" ");
 
     return (
       <div className="LoggedIn">

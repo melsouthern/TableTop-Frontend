@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { getSpecificReviewComments } from "../utils/axios";
 import PostComment from "./PostComment";
 import loading from "../loading.gif";
+import Error400 from "./Error400";
 
 const Comments = () => {
   const { review_id } = useParams();
@@ -25,7 +26,7 @@ const Comments = () => {
       });
   }, [review_id]);
 
-  if (error) return <p>{error}</p>;
+  if (error) return <Error400 error={error} />;
   if (isLoading)
     return (
       <section>

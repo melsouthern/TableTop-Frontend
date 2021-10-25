@@ -1,54 +1,43 @@
 import { useState } from "react";
-import { getUsers } from "../utils/axios";
 import { useParams, useHistory } from "react-router-dom";
 import { postComment } from "../utils/axios";
 import { UserContext } from "../contexts/User";
 import { useContext } from "react";
 
 const PostComment = ({ setComments }) => {
-  const [username, setUsername] = useState(null);
   const [comment, setComment] = useState(null);
   const [error, setError] = useState(null);
   const { review_id } = useParams();
-  const { user, setUser } = useContext(UserContext);
+  const { user } = useContext(UserContext);
   const history = useHistory();
 
   if (!user) {
     return (
-      <button onClick={() => history.push("/login")}>
-        Log in to post a comment
-      </button>
+      <div className="LogButtonContainer">
+        <button className="LogButton" onClick={() => history.push("/login")}>
+          Log in to post a comment
+        </button>
+      </div>
     );
   }
 
   return (
-    <div>
-      <p>Post a comment</p>
+    <div className="PostCommentContainer">
       <form
+        className="PostComment"
         onSubmit={async (e) => {
           setError(null);
           e.preventDefault();
-          if (!comment || !username) {
-            setError("All fields must be filled in");
+          if (!comment) {
+            setError("You haven't written anything. Try again!");
             return;
           }
           setError(null);
           try {
-            await getUsers(username);
-          } catch (err) {
-            setError("Username provided does not exist");
-            return;
-          }
-          try {
-            const addedComment = await postComment(
-              review_id,
-              username,
-              comment
-            );
+            const addedComment = await postComment(review_id, user[1], comment);
             setError("Post successful!");
             e.target.reset();
             setComment(null);
-            setUsername(null);
             setComments((currComments) => {
               const currCommentsCopy = [...currComments];
               currCommentsCopy.push(addedComment.comment);
@@ -63,30 +52,31 @@ const PostComment = ({ setComments }) => {
             }
           }
         }}
-        className="PostComment"
       >
-        <label htmlFor="username-input">Username</label>
-        <input
-          id="username-input"
-          type="text"
-          placeholder="e.g 'jessjelly'"
-          onChange={(e) => {
-            setUsername(e.target.value);
-          }}
-        ></input>
-        <br></br>
-        <label htmlFor="post-comment">Comment</label>
-        <input
-          id="post-comment"
-          type="text"
-          placeholder="write your comment"
-          onChange={(e) => {
-            setComment(e.target.value);
-          }}
-        ></input>
-        <br></br>
-        <button type="submit">Post</button>
-        <p>{error}</p>
+        <div>
+          <div>
+            <p className="PostCommentHeader">Post a comment</p>
+            <div className="mb-3">
+              <div className="mb-3"></div>
+              <label htmlFor="post-comment" className="LoggedInAs">
+                Logged in as {user[1]}
+              </label>
+              <textarea
+                className="form-control"
+                id="post-comment"
+                rows="3"
+                placeholder="Write a comment..."
+                onChange={(e) => {
+                  setComment(e.target.value);
+                }}
+              ></textarea>
+            </div>
+          </div>
+          <div className="SubmitButtonContainer">
+            <button className="SubmitButton">Submit</button>
+          </div>
+          <p className="SubmitError">{error}</p>
+        </div>
       </form>
     </div>
   );

@@ -117,6 +117,67 @@
 
 .PostComment {
   display: inline-block;
+  flex-wrap: wrap;
+  width: 1000px;
+}
+
+.PostCommentHeader {
+  padding-top: 5px;
+  font-size: 18px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-decoration: underline;
+  text-decoration-color: #ee5162;
+  text-decoration-thickness: 2px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+.PostCommentContainer {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  text-align: left;
+  display: flex;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.PostCommentForm {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.LoggedInAs {
+  color: grey;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.SubmitError {
+  color: grey;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.SubmitButton {
+  all: unset;
+  margin-top: 0px;
+  background-color: #190b3d;
+  padding: 2px;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: white;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  margin-bottom: 0px;
+  font-size: 16px;
+}
+
+.SubmitButtonContainer {
+  padding-top: 0px;
+  text-align: center;
 }
 
 .BackButton {
@@ -165,10 +226,61 @@
   justify-content: center;
 }
 
+.LogButton {
+  height: 45px;
+  background-color: #190b3d;
+  border: none;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  font-size: 27px;
+  color: white;
+  flex-grow: 2;
+  justify-content: center;
+  text-align: center;
+  font-size: 16px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.LogButtonContainer {
+  display: flex;
+  padding-top: 5px;
+}
+
 @media only screen and (min-width: 600px) {
   .IndividualReviewImgContainer {
     margin-left: 15%;
     margin-right: 15%;
+  }
+
+  .ReviewTitle {
+    font-size: 33px;
+    padding-bottom: 10px;
+  }
+
+  .ReviewAddedInfo {
+    font-size: 16px;
+  }
+
+  .GameInfo {
+    font-size: 16px;
+  }
+
+  .CommentsButton {
+    font-size: 20px;
+  }
+
+  .IndividualComments {
+    font-size: 16px;
+  }
+
+  .LogButton {
+    font-size: 20px;
+  }
+
+  .PostCommentHeader {
+    font-size: 20px;
   }
 }
 
@@ -176,5 +288,58 @@
   .IndividualReviewImgContainer {
     margin-left: 20%;
     margin-right: 20%;
+  }
+
+  .ReviewTitle {
+    font-size: 45px;
+    padding-bottom: 10px;
+  }
+
+  .GameInfo {
+    width: 700px;
+    margin: auto;
+    justify-content: center;
+    background-color: #ecf1fd;
+    font-size: 18px;
+  }
+
+  .GameInfoContainer {
+    background-color: #ecf1fd;
+    padding-top: 20px;
+  }
+
+  .IndividualReviewImg {
+    max-width: 700px;
+    max-height: 600px;
+    padding-bottom: 40px;
+  }
+
+  .LikeButtonContainer {
+    width: 700px;
+    margin: auto;
+  }
+
+  .LikeButtonContainerForMedia {
+    background-color: #ecf1fd;
+    padding: 20px;
+    padding-bottom: 40px;
+  }
+
+  .IndividualComments {
+    width: 700px;
+    margin: auto;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+
+  .LogButtonContainer {
+    margin-top: 40px;
+    width: 700px;
+    margin: auto;
+  }
+
+  .PostComment {
+    width: 700px;
+    margin: auto;
   }
 }

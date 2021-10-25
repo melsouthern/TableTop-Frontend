@@ -6,6 +6,7 @@ import Comments from "./Comments";
 import dice from "../dice.png";
 import upvote from "../up-arrow (2).png";
 import loading from "../loading.gif";
+import Error400 from "./Error400";
 
 const IndividualReview = () => {
   const [specificReview, setSpecificReview] = useState({});
@@ -31,7 +32,7 @@ const IndividualReview = () => {
       });
   }, [setSpecificReview, review_id, specificReview.votes]);
 
-  if (error) return <p>{error}</p>;
+  if (error) return <Error400 error={error} />;
   if (isLoading)
     return (
       <section>
@@ -76,34 +77,40 @@ const IndividualReview = () => {
           ></img>
         </div>
       </div>
-      <div className="GameInfo">
-        <p>Game Designer: {specificReview.designer} </p>
-        <p>Category: {specificReview.category}</p>
-        <p>Review: {specificReview.review_body}</p>
+      <div className="GameInfoContainer">
+        <div className="GameInfo">
+          <p>Game Designer: {specificReview.designer} </p>
+          <p>Category: {specificReview.category}</p>
+          <p>Review: {specificReview.review_body}</p>
+        </div>
       </div>
-      <div className="LikeButtonContainer">
-        <button
-          disabled={isButtonDisabled}
-          className="LikeButton"
-          onClick={(e) => {
-            setVotes((currVotes) => {
-              return (currVotes += 1);
-            });
-            setIsButtonDisabled(true);
-            patchSpecificReviewVotes(specificReview.review_id).catch((err) => {
-              if (err) {
-                setVotes((currVotes) => {
-                  return (currVotes -= 1);
-                });
-                setError("Something went wrong, please try again");
-              }
-            });
-          }}
-        >
-          <img className="DiceImg2" src={dice} alt="like button"></img>
-          <img className="Upvote2" src={upvote} alt="like button"></img>
-          {votes}
-        </button>
+      <div className="LikeButtonContainerForMedia">
+        <div className="LikeButtonContainer">
+          <button
+            disabled={isButtonDisabled}
+            className="LikeButton"
+            onClick={(e) => {
+              setVotes((currVotes) => {
+                return (currVotes += 1);
+              });
+              setIsButtonDisabled(true);
+              patchSpecificReviewVotes(specificReview.review_id).catch(
+                (err) => {
+                  if (err) {
+                    setVotes((currVotes) => {
+                      return (currVotes -= 1);
+                    });
+                    setError("Something went wrong, please try again");
+                  }
+                }
+              );
+            }}
+          >
+            <img className="DiceImg2" src={dice} alt="like button"></img>
+            <img className="Upvote2" src={upvote} alt="like button"></img>
+            {votes}
+          </button>
+        </div>
       </div>
       <p className="VoteError">{error}</p>
       <Comments />

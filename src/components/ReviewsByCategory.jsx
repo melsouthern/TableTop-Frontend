@@ -4,6 +4,7 @@ import "../componentsCSS/reviewsbycategory.css";
 import { getReviewsByCategory } from "../utils/axios";
 import loading from "../loading.gif";
 import dice from "../dice.png";
+import Error400 from "./Error400";
 import upvote from "../up-arrow.png";
 
 const ReviewsByCategory = () => {
@@ -27,7 +28,7 @@ const ReviewsByCategory = () => {
       });
   }, [sortBy, category]);
 
-  if (error) return <p>{error}</p>;
+  if (error) return <Error400 error={error} />;
   if (isLoading)
     return (
       <section>

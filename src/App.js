@@ -26,8 +26,8 @@ function App() {
           <Route exact path="/reviews/:category/:review_id">
             <IndividualReview />
           </Route>
-          <Route>
-            <Login exact path="/login" />
+          <Route exact path="/login">
+            <Login />
           </Route>
           <IncorrectPath />
         </Switch>

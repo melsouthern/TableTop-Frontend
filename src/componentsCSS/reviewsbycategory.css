@@ -246,8 +246,9 @@
   }
 
   .GameReviewsUnder {
-    font-size: 25px;
+    font-size: 30px;
     padding-bottom: 10px;
+    line-height: 28px;
   }
 
   .Category {
@@ -267,7 +268,7 @@
 
   .GameReviewsUnder {
     font-size: 35px;
-    padding-bottom: 10px;
+    padding-bottom: 17px;
   }
 
   .Category {

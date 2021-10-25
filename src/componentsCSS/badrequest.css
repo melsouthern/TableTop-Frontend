@@ -1,0 +1,28 @@
+.Error400Img {
+  width: 250px;
+  margin: auto;
+}
+
+.Error400Text {
+  margin: auto;
+}
+
+.Error400Page {
+  text-align: center;
+  margin: 30px;
+  margin-top: 60px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: #190b3d;
+}
+
+@media only screen and (min-width: 600px) {
+  .Error400Img {
+    width: 400px;
+    margin: auto;
+  }
+
+  .Error400Text {
+    margin: auto;
+    font-size: 20px;
+  }
+}
