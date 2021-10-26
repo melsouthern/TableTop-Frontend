@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# TableTop - Board Game Reviews Web Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Hosted Link
 
-## Available Scripts
+To view the live front-end web application for TableTop, visit `https://board-games-frontend.netlify.app`
 
-In the project directory, you can run:
+## Description
 
-### `npm start`
+TableTop is a platform where users can comment on and rate board game reviews. Features include:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Login system
+- Like button functionality
+- Search by category
+- Sort by date created / comment count / votes
+- Loading screens
+- Error handling
+- Comment system
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+---
 
-### `npm test`
+## Other Useful Links
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This front-end web application was built alongside a board game API - key links below:
 
-### `npm run build`
+- Back-end hosted API: `https://mels-board-games-api.herokuapp.com/api`
+- Back-end API repo: `https://github.com/melsouthern/board-games-api`
+- Front-end web application repo: `https://github.com/melsouthern/nc-games`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Development Tools
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The web application for TableTop has been developed with the following:
 
-### `npm run eject`
+- `JavaScript`
+- `Node.js`
+- `React`
+- `Axios`
+- `React-Router-Dom`
+- `HTML`
+- `CSS`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+---
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Repository Setup
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+If you would like to check out the repository and have a look around, follow the below steps. Please note, the following version of Node is recommended for running the project to ensure it runs as smoothly as possible:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+`Node.js:` v14.17.0
 
-## Learn More
+1. Firstly, you will need to `fork` the repository from nc-games to your personal GitHub account. To do this, open the GitHub repository at `https://github.com/melsouthern/nc-games` and click on the 'Fork' button on the top right hand corner of the repository. From here you can select your personal account where the repository will be accessible.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. Once the repository has been forked, you will need to `clone` this repository down to your local machine. To do this, make sure you are on the newly forked personal repository `yourUsername/nc-games`, click on the 'Code' button and copy the link provided. From here, open up your IDE and use `git clone` in your command line alongside the provided weblink given to clone the repository to your machine.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. Now you have cloned and opened the repository, you will need to download the `development dependencies` to ensure that the environment is setup correctly. To do this, enter `npm install` into your command line.
 
-### Code Splitting
+4. To start the application, enter `npm start` into the terminal.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+5. If you would like to look around the files, please note the below:
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- React components can be found in src/components
+- CSS files can be found in src/componentsCSS
+- Utility functions can be found in src/utils
